@@ -1,0 +1,19 @@
+<input type="text" placeholder="author" ng-model="newMessage.author">
+<br>
+<textarea rows="8" cols="40" ng-model="newMessage.body"></textarea>
+<br>
+<button type="button" ng-click="createMessage(newMessage)">Create</button>
+
+<br><br><br>
+
+<div ng-repeat="message in messages track by $index">
+  {{message.author}}<br>
+  {{message.body}}
+  <br>
+  <input type="text" placeholder="author" ng-model="updatedMessage.author">
+  <br>
+  <textarea rows="8" cols="40" ng-model="updatedMessage.body"></textarea>
+  <br>
+  <button type="button" ng-click="updateMessage(message._id, updatedMessage)">Update</button>
+  <button type="button" ng-click="deleteMessage(message._id)">Delete</button>
+</div>
